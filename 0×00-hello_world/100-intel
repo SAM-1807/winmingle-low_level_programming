@@ -1,0 +1,7 @@
+/**
+* Author: Agbai Samuel Chibuike
+* Program: WinMingle Community C Training
+* Description: This is a script that generates the assembly code of a C code and saves it to an output file, using intel syntax.
+*/
+#!/usr/bin/env bash
+gcc -S -masm=intel $CFILE
