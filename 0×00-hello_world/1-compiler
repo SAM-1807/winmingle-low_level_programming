@@ -1,0 +1,7 @@
+/**
+* Author: Agbai Samuel Chibuike
+* Program: WinMingle Community C Training
+* Description: This is a script that compiles a C file, but does not link.
+*/
+#!/usr/bin/env bash
+gcc -c $CFILE -o $(basename $CFILE .c).o
