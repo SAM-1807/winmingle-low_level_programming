@@ -1,0 +1,7 @@
+/**
+* Author: Agbai Samuel Chibuike
+* Program: WinMingle Community C Training
+* Description: This is a script that runs a C file through the preprocessor and saves the result into another file.
+*/
+#!/usr/bin/env bash
+gcc -E $CFILE -o c
