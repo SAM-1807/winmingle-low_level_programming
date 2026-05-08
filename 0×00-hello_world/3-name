@@ -1,0 +1,7 @@
+/**
+* Author: Agbai Samuel Chibuike
+* Program: WinMingle Community C Training
+* Description: This is a script that compiles a C file and creates an executable named "cisfun"
+*/
+#!/usr/bin/env bash
+gcc $CFILE -o cisfun
