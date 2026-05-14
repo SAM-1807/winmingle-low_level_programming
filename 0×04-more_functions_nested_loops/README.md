@@ -48,3 +48,8 @@ This project builds on the previous functions and nested loops module, introduci
 
 ```bash
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 _putchar.c 0-isupper.c -o isupper
+```
+
+## Author
+
+SAM
