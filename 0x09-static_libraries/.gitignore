@@ -1,0 +1,3 @@
+*.o
+liball.a
+_putchar.c
