@@ -2,26 +2,26 @@
 
 This project covers:
 - Pointers to pointers
-- Multidimensional arrays
-- Low-level memory manipulation (`memset`, `memcpy`)
+    - Multidimensional arrays
+    - Low-level memory manipulation (`memset`, `memcpy`)
 - String helper functions (`strchr`, `strspn`, `strpbrk`, `strstr`)
-- Printing chessboards and diagonal sums
+    - Printing chessboards and diagonal sums
 
 ## Files
 
-| Task | File |
-|------|------|
-| 0 | `0-memset.c` |
-| 1 | `1-memcpy.c` |
-| 2 | `2-strchr.c` |
-| 3 | `3-strspn.c` |
-| 4 | `4-strpbrk.c` |
-| 5 | `5-strstr.c` |
-| 6 | `7-print_chessboard.c` |
-| 7 | `8-print_diagsums.c` |
-| 8 | `100-set_string.c` |
-| Header | `main.h` |
+    | Task | File | Function |
+    |------|------|----------|
+    | 0 | `0-memset.c` | `_memset` |
+    | 1 | `1-memcpy.c` | `_memcpy` |
+    | 2 | `2-strchr.c` | `_strchr` |
+    | 3 | `3-strspn.c` | `_strspn` |
+    | 4 | `4-strpbrk.c` | `_strpbrk` |
+    | 5 | `5-strstr.c` | `_strstr` |
+    | 6 | `6-print_chessboard.c` | `print_chessboard` |
+    | 7 | `7-print_diagsums.c` | `print_diagsums` |
+    | 8 | `8-set_string.c` | `set_string` |
+    | Header | `main.h` | - |
 
 ## Author
 
-SAM
+    SAM
