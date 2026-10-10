@@ -4,8 +4,7 @@ void *malloc_checked(unsigned int b)
 {
 	void *ptr;
 	ptr = malloc(b);
-
-	if(malloc(b) == NULL)
+	if(ptr == NULL)
 		exit(98);
 	return(ptr);
 }
