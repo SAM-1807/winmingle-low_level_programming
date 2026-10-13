@@ -7,7 +7,6 @@
  * Return: Always 0 (Success)
  */
 
-#include "main.h"
 #include <stdio.h>
 
 /**
