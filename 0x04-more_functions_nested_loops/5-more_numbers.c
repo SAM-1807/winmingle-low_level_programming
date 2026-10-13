@@ -1,21 +1,36 @@
+/**
+ * 5-more_numbers - Prints 0 to 14 ten times
+ * Author: Agbai Samuel Chibuike
+ * Program: WinMingle Community C Training
+ * Description: Prints numbers 0 to 14, ten times, using _putchar.
+ *
+ * Return: Nothing
+ */
+
 #include "main.h"
 
+/**
+ * more_numbers - Prints 0 to 14 ten times
+ *
+ * Return: Nothing
+ */
 void more_numbers(void)
 {
 	int i;
-	int print = 1;
+	int n;
 
-	while(print < 11)    {
-		i = 0;
-		while(i < 15)    {
-			if(i > 9)    
-				_putchar((i / 10) + '0');
-			_putchar((i % 10) + '0');	
-			i++;
+	i = 0;
+	while (i < 10)
+	{
+		n = 0;
+		while (n <= 14)
+		{
+			if (n >= 10)
+				_putchar(n / 10 + '0');
+			_putchar(n % 10 + '0');
+			n++;
 		}
 		_putchar('\n');
-		print++;
+		i++;
 	}
-	return;
 }
-

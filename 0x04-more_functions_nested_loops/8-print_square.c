@@ -1,24 +1,41 @@
+/**
+ * 8-print_square - Draws a square of # characters
+ * Author: Agbai Samuel Chibuike
+ * Program: WinMingle Community C Training
+ * Description: Prints a square of size x size using # characters.
+ *
+ * Return: Nothing
+ */
+
 #include "main.h"
 
+/**
+ * print_square - Draws a square of # characters
+ * @size: The side length of the square
+ *
+ * Return: Nothing
+ */
 void print_square(int size)
 {
 	int i;
 	int j;
 
-	if(size < 1)    {
+	if (size <= 0)
+	{
 		_putchar('\n');
 		return;
 	}
 
-	if(size > 0)    {
-
-		for(i = 0; i < size; i++)    {
-			for(j = 0; j < size; j++)    {
-				_putchar('#');
-			}
+	i = 0;
+	while (i < size)
+	{
+		j = 0;
+		while (j < size)
+		{
+			_putchar('#');
+			j++;
 		}
-
+		_putchar('\n');
+		i++;
 	}
-	_putchar('\n');
-	return;
 }
