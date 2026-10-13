@@ -1,18 +1,35 @@
-#include "main.h"
+/**
+ * 100-argstostr - Concatenates program arguments into one string
+ * Author: Agbai Samuel Chibuike
+ * Program: WinMingle Community C Training
+ * Description: Builds a string from arguments, each followed by a newline.
+ *
+ * Return: Pointer to the string, or NULL on failure
+ */
 
+#include "main.h"
+#include <stdlib.h>
+
+/**
+ * argstostr - Concatenates program arguments into one string
+ * @ac: Argument count
+ * @av: Argument vector
+ *
+ * Return: Pointer to the string, or NULL on failure
+ */
 char *argstostr(int ac, char **av)
 {
 	char *result;
-	int total;
 	int i;
 	int j;
-	int pos;
+	int total;
+	int k;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
-
 	total = 0;
-	for (i = 0; i < ac; i++)
+	i = 0;
+	while (i < ac)
 	{
 		j = 0;
 		while (av[i][j] != '\0')
@@ -21,26 +38,26 @@ char *argstostr(int ac, char **av)
 			j++;
 		}
 		total++;
+		i++;
 	}
-
-	result = malloc(total + 1);
+	result = malloc(sizeof(char) * (total + 1));
 	if (result == NULL)
 		return (NULL);
-
-	pos = 0;
-	for (i = 0; i < ac; i++)
+	k = 0;
+	i = 0;
+	while (i < ac)
 	{
 		j = 0;
 		while (av[i][j] != '\0')
 		{
-			result[pos] = av[i][j];
-			pos++;
+			result[k] = av[i][j];
+			k++;
 			j++;
 		}
-		result[pos] = '\n';
-		pos++;
+		result[k] = '\n';
+		k++;
+		i++;
 	}
-	result[pos] = '\0';
-
+	result[k] = '\0';
 	return (result);
 }

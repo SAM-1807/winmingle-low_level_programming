@@ -1,31 +1,54 @@
-#include "main.h"
+/**
+ * 3-alloc_grid - Allocates a 2D grid of integers
+ * Author: Agbai Samuel Chibuike
+ * Program: WinMingle Community C Training
+ * Description: Allocates a width x height grid, initialized to 0.
+ *
+ * Return: Pointer to the grid, or NULL on failure
+ */
 
+#include "main.h"
+#include <stdlib.h>
+
+/**
+ * alloc_grid - Allocates a 2D grid of integers
+ * @width: Width of the grid
+ * @height: Height of the grid
+ *
+ * Return: Pointer to the grid, or NULL on failure
+ */
 int **alloc_grid(int width, int height)
 {
 	int **grid;
-	int i;
-	int j;
+	int row;
+	int col;
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
-
-	grid = malloc(height * sizeof(int *));
+	grid = malloc(sizeof(int *) * height);
 	if (grid == NULL)
 		return (NULL);
-
-	for (i = 0; i < height; i++)
+	row = 0;
+	while (row < height)
 	{
-		grid[i] = malloc(width * sizeof(int));
-		if (grid[i] == NULL)
+		grid[row] = malloc(sizeof(int) * width);
+		if (grid[row] == NULL)
 		{
-			for (j = 0; j < i; j++)
-				free(grid[j]);
+			while (row > 0)
+			{
+				row--;
+				free(grid[row]);
+			}
 			free(grid);
 			return (NULL);
 		}
-		for (j = 0; j < width; j++)
-			grid[i][j] = 0;
+		col = 0;
+		while (col < width)
+		{
+			grid[row][col] = 0;
+			col++;
+		}
+		row++;
 	}
-
 	return (grid);
 }
