@@ -1,21 +1,28 @@
 /**
+ * Print_alphabt - Prints the alphabet except e and q
  * Author: Agbai Samuel Chibuike
  * Program: WinMingle Community C Training
- * Description: This is a program that prints the alphabet in lowercase except letters q and e, followed by a new line. 
+ * Description: Prints lowercase alphabet except 'e' and 'q', then a new line.
+ *
+ * Return: Always 0 (Success)
  */
 
 #include <stdio.h>
+
 int main(void)
 {
-	char letter;
-	letter = 'a';
+	char c;
 
-	while(letter <= 'z')    {
-		if(letter != 'e' && letter != 'q')    {
-		putchar(letter);
+	c = 'a';
+	while (c <= 'z')
+	{
+		if (c != 'e' && c != 'q')
+		{
+			putchar(c);
 		}
-			letter++;
+		c++;
 	}
 	putchar('\n');
+
 	return (0);
 }

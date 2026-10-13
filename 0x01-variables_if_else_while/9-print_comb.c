@@ -1,20 +1,30 @@
 /**
+ * Print_comb - Prints single-digit combinations
  * Author: Agbai Samuel Chibuike
  * Program: WinMingle Community C Training
- * Description: This is a program that prints all possible single-digit numbers separated by commas and spaces, excluding the last single digit.
+ * Description: Prints all single-digit numbers separated by comma and space.
+ *
+ * Return: Always 0 (Success)
  */
 
 #include <stdio.h>
+
 int main(void)
 {
-	int digit = 0;
+	int n;
 
-	while(digit <=9)    {
-		printf("%d", digit);
-		if(digit != 9)
-			printf(", ");
-		digit++;
+	n = 0;
+	while (n <= 9)
+	{
+		putchar(n + '0');
+		if (n < 9)
+		{
+			putchar(',');
+			putchar(' ');
+		}
+		n++;
 	}
 	putchar('\n');
+
 	return (0);
 }

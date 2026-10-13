@@ -1,34 +1,44 @@
 /**
+ * Print_comb4 - Prints combinations of three digits
  * Author: Agbai Samuel Chibuike
  * Program: WinMingle Community C Training
- * Description: This is a program that prints all possible different combinations of three digits.
+ * Description: Prints all different combinations of three digits.
+ *
+ * Return: Always 0 (Success)
  */
 
 #include <stdio.h>
+
 int main(void)
 {
-	int first=0;
-	int  second;
-	int third;
+	int i;
+	int j;
+	int k;
 
-	while(first <=7)    {
-		second = first + 1;
-			while(second <= 8)    {
-				third = second + 1;
-					while(third <= 9)    {
-					putchar(first + '0');
-				putchar(second + '0');
-				putchar(third + '0');
-			if(!(first == 7 && second == 8 && third == 9))    {
-				putchar(',');
-				putchar(' ');
+	i = 0;
+	while (i <= 7)
+	{
+		j = i + 1;
+		while (j <= 8)
+		{
+			k = j + 1;
+			while (k <= 9)
+			{
+				putchar(i + '0');
+				putchar(j + '0');
+				putchar(k + '0');
+				if (!(i == 7 && j == 8 && k == 9))
+				{
+					putchar(',');
+					putchar(' ');
+				}
+				k++;
 			}
-			third++;
-			}
-		second++;
-	}
-	first++;
+			j++;
+		}
+		i++;
 	}
 	putchar('\n');
-	return(0);
+
+	return (0);
 }

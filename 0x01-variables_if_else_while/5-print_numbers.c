@@ -1,19 +1,25 @@
 /**
+ * Print_numbers - Prints single-digit numbers
  * Author: Agbai Samuel Chibuike
  * Program: WinMingle Community C Training
- * Description: This is a program that prints all single-digit numbers of base 10 starting from 0. No space or commas in between.
+ * Description: Prints all single-digit numbers of base 10 starting from 0.
+ *
+ * Return: Always 0 (Success)
  */
 
 #include <stdio.h>
+
 int main(void)
 {
-	int digit;
-	digit = '0';
+	int n;
 
-	while(digit <= '9')    {
-		putchar(digit);
-		digit++;
+	n = 0;
+	while (n < 10)
+	{
+		printf("%d", n);
+		n++;
 	}
-	putchar('\n');
-	return(0);
+	printf("\n");
+
+	return (0);
 }

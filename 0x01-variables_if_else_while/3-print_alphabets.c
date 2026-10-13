@@ -1,23 +1,32 @@
 /**
+ * Print_alphabets - Prints lowercase then uppercase alphabet
  * Author: Agbai Samuel Chibuike
  * Program: WinMingle Community C Training
- * Description: This is a program that prints the alphabet in lowercase, then uppercase, followed by a new line.
+ * Description: Prints lowercase then uppercase alphabet, then a new line.
+ *
+ * Return: Always 0 (Success)
  */
 
 #include <stdio.h>
+
 int main(void)
 {
-	char letter;
-	letter = 'a';
-	while(letter <= 'z')    {
-		putchar(letter);
-		letter++;
+	char c;
+
+	c = 'a';
+	while (c <= 'z')
+	{
+		putchar(c);
+		c++;
 	}
-		letter = 'A';
-		while(letter <= 'Z')    {
-			putchar(letter);
-			letter++;
+
+	c = 'A';
+	while (c <= 'Z')
+	{
+		putchar(c);
+		c++;
 	}
 	putchar('\n');
+
 	return (0);
 }

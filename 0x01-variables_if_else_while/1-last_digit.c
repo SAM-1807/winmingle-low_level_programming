@@ -1,34 +1,32 @@
 /**
+ * Last_digit - Describes the last digit of a random number
  * Author: Agbai Samuel Chibuike
  * Program: WinMingle Community C Training
- * Description: This is a program that prints the last digit of a random number n.
+ * Description: Prints the last digit of a random number and describes it.
+ *
+ * Return: Always 0 (Success)
  */
 
-#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdio.h>
 
 int main(void)
 {
 	int n;
-	int x;
+	int last;
+
 	srand(time(0));
-	n = rand() - (RAND_MAX/2);
-	x = n % 10;
+	n = rand() - RAND_MAX / 2;
+	last = n % 10;
 
-	if(x < 5 && x > 0)    {
-		printf("Last digit of %d is %d and is less than 5 but not 0\n", n, x);
-	}
+	if (last > 5)
+		printf("Last digit of %d is %d and is greater than 5\n", n, last);
+	else if (last == 0)
+		printf("Last digit of %d is %d and is 0\n", n, last);
+	else
+		printf("Last digit of %d is %d and is less than 6 and not 0\n",
+				n, last);
 
-	else if(x > 5)    {
-		printf("Last digit of %d is %d and is greater than 5\n", n, x);
-	}
-
-	else if(x == 0)    {
-		printf("Last digit of %d is %d\n", n, x);
-	}
-	else if(x > 0 && x < 6)    {
-		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, x);
-	}
-	return(0);
+	return (0);
 }

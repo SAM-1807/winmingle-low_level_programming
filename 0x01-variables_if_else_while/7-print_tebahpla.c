@@ -1,19 +1,25 @@
 /**
+ * Print_tebahpla - Prints the alphabet in reverse
  * Author: Agbai Samuel Chibuike
  * Program: WinMingle Community C Training
- * Description: This is a program that prints the lowercase alphabet in reverse order.
+ * Description: Prints the lowercase alphabet in reverse, followed by a new line.
+ *
+ * Return: Always 0 (Success)
  */
 
 #include <stdio.h>
+
 int main(void)
 {
-	char letter;
-	letter = 'z';
+	char c;
 
-	while(letter >= 'a')    {
-	putchar(letter);
-	letter--;
+	c = 'z';
+	while (c >= 'a')
+	{
+		putchar(c);
+		c--;
 	}
 	putchar('\n');
+
 	return (0);
 }

@@ -1,24 +1,32 @@
 /**
+ * Print_base16 - Prints all hexadecimal digits
  * Author: Agbai Samuel Chibuike
  * Program: WinMingle Community C Training
- * Description: This is a program that prints all the numbers of base 16 in lowercase.
+ * Description: Prints all numbers of base 16 in lowercase, then a new line.
+ *
+ * Return: Always 0 (Success)
  */
 
 #include <stdio.h>
+
 int main(void)
 {
-	char base16_digits = '0';
-	char base16_letters = 'a';
+	char c;
 
-	while(base16_digits <= '9')    {
-		putchar(base16_digits);
-		base16_digits++;
+	c = '0';
+	while (c <= '9')
+	{
+		putchar(c);
+		c++;
 	}
 
-	while(base16_letters <= 'f')    {
-			putchar(base16_letters);
-		base16_letters++;
+	c = 'a';
+	while (c <= 'f')
+	{
+		putchar(c);
+		c++;
 	}
 	putchar('\n');
+
 	return (0);
 }

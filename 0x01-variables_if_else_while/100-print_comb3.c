@@ -1,38 +1,37 @@
 /**
+ * Print_comb3 - Prints combinations of two digits
  * Author: Agbai Samuel Chibuike
  * Program: WinMingle Community C Training
- * Description: This is a program that prints all possible different combinations of two digits.
+ * Description: Prints all different combinations of two digits.
+ *
+ * Return: Always 0 (Success)
  */
 
 #include <stdio.h>
 
 int main(void)
 {
-    int first = 0;
-    int second;
+	int i;
+	int j;
 
-    while (first <= 8)
-    {
-        second = first + 1;
-        
-        while (second <= 9)
-        {
-            putchar(first + '0');
-            putchar(second + '0');
-            
-            if (!(first == 8 && second == 9))
-            {
-                putchar(',');
-                putchar(' ');
-            }
-            
-            second++;
-        }
-        
-        first++;
-    }
-    
-    putchar('\n');
-    
-    return (0);
+	i = 0;
+	while (i <= 8)
+	{
+		j = i + 1;
+		while (j <= 9)
+		{
+			putchar(i + '0');
+			putchar(j + '0');
+			if (!(i == 8 && j == 9))
+			{
+				putchar(',');
+				putchar(' ');
+			}
+			j++;
+		}
+		i++;
+	}
+	putchar('\n');
+
+	return (0);
 }
