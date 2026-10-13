@@ -24,3 +24,4 @@ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 file.c -o output
 ## Author
 
 SAM
+
