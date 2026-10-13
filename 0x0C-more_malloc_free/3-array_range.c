@@ -1,22 +1,39 @@
-#include "main.h"
+/**
+ * 3-array_range - Creates an array of integers
+ * Author: Agbai Samuel Chibuike
+ * Program: WinMingle Community C Training
+ * Description: Creates an array from min to max inclusive.
+ *
+ * Return: Pointer to the array, or NULL on failure
+ */
 
+#include "main.h"
+#include <stdlib.h>
+
+/**
+ * array_range - Creates an array of integers
+ * @min: Minimum value
+ * @max: Maximum value
+ *
+ * Return: Pointer to the array, or NULL on failure
+ */
 int *array_range(int min, int max)
 {
-	int *result;
-	int count;
+	int *arr;
+	int size;
 	int i;
 
 	if (min > max)
 		return (NULL);
-
-	count = max - min + 1;
-
-	result = malloc(count * sizeof(int));
-	if (result == NULL)
+	size = max - min + 1;
+	arr = malloc(sizeof(int) * size);
+	if (arr == NULL)
 		return (NULL);
-
-	for (i = 0; i < count; i++)
-		result[i] = min + i;
-
-	return (result);
+	i = 0;
+	while (i < size)
+	{
+		arr[i] = min + i;
+		i++;
+	}
+	return (arr);
 }
