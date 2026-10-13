@@ -1,14 +1,31 @@
+/**
+ * 9-strcpy - Copies a string
+ * Author: Agbai Samuel Chibuike
+ * Program: WinMingle Community C Training
+ * Description: Copies the string src into dest.
+ *
+ * Return: Pointer to dest
+ */
+
 #include "main.h"
 
+/**
+ * _strcpy - Copies a string from src to dest
+ * @dest: The destination buffer
+ * @src: The source string
+ *
+ * Return: Pointer to dest
+ */
 char *_strcpy(char *dest, char *src)
 {
-	char *original = dest;
+	int i;
 
-	while(*src != '\0')    {
-		*dest = *src;
-		src++;
-		dest++;
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
 	}
-	*dest = '\0';
-	return (original);
+	dest[i] = '\0';
+	return (dest);
 }
