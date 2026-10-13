@@ -1,8 +1,8 @@
 /**
- * 6-print_line - Draws a straight line of underscores
+ * 7-print_diagonal - Draws a diagonal line
  * Author: Agbai Samuel Chibuike
  * Program: WinMingle Community C Training
- * Description: Prints n underscores followed by a new line.
+ * Description: Prints a diagonal line of n backslashes.
  *
  * Return: Nothing
  */
@@ -10,14 +10,15 @@
 #include "main.h"
 
 /**
- * print_line - Draws a straight line in the terminal
- * @n: The number of underscores to print
+ * print_diagonal - Draws a diagonal line in the terminal
+ * @n: The number of lines
  *
  * Return: Nothing
  */
-void print_line(int n)
+void print_diagonal(int n)
 {
 	int i;
+	int j;
 
 	if (n <= 0)
 	{
@@ -28,8 +29,14 @@ void print_line(int n)
 	i = 0;
 	while (i < n)
 	{
-		_putchar('_');
+		j = 0;
+		while (j < i)
+		{
+			_putchar(' ');
+			j++;
+		}
+		_putchar('\\');
+		_putchar('\n');
 		i++;
 	}
-	_putchar('\n');
 }
