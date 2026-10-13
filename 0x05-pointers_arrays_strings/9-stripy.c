@@ -1,5 +1,5 @@
 /**
- * 9-strcpy - Copies a string
+ * 9-stripy - Copies a string
  * Author: Agbai Samuel Chibuike
  * Program: WinMingle Community C Training
  * Description: Copies the string src into dest.

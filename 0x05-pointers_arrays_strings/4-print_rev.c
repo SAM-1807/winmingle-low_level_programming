@@ -1,29 +1,33 @@
+/**
+ * 4-print_rev - Prints a string in reverse
+ * Author: Agbai Samuel Chibuike
+ * Program: WinMingle Community C Training
+ * Description: Prints a string in reverse followed by a new line.
+ *
+ * Return: Nothing
+ */
+
 #include "main.h"
 
+/**
+ * print_rev - Prints a string in reverse
+ * @s: The string to print
+ *
+ * Return: Nothing
+ */
 void print_rev(char *s)
 {
-	char *ptr = s;
+	int len;
 
-	/* 1. Go to the end of the string */
-	while (*ptr != '\0')
-		ptr++;
+	len = 0;
+	while (s[len] != '\0')
+		len++;
 
-	/* 2. Step back to the last character */
-	ptr--;
-
-	/* 3. Print backwards */
-	while (ptr >= s)
+	len--;
+	while (len >= 0)
 	{
-		_putchar(*ptr);
-		ptr--;
+		_putchar(s[len]);
+		len--;
 	}
-
 	_putchar('\n');
-}
-
-#include <unistd.h>
-
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
 }

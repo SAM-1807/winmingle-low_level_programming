@@ -1,32 +1,46 @@
+/**
+ * 10-atoi - Converts a string to an integer
+ * Author: Agbai Samuel Chibuike
+ * Program: WinMingle Community C Training
+ * Description: Converts a string to an integer.
+ *
+ * Return: The integer value
+ */
+
 #include "main.h"
 
+/**
+ * _atoi - Converts a string to an integer
+ * @s: The string to convert
+ *
+ * Return: The integer value
+ */
 int _atoi(char *s)
 {
-	int result = 0;
-	int sign = 1;
-	int i = 0;
+	int sign;
+	int result;
 
-	/* Skip spaces */
-	while (s[i] == ' ')
-		i++;
+	sign = 1;
+	result = 0;
 
-	/* Handle signs */
-	while (s[i] == '+' || s[i] == '-')
+	while (*s == ' ' || *s == '\t' || *s == '\n')
+		s++;
+
+	if (*s == '-')
 	{
-		if (s[i] == '-')
-			sign = sign * -1;
-		i++;
+		sign = -1;
+		s++;
+	}
+	else if (*s == '+')
+	{
+		s++;
 	}
 
-	/* Convert digits to integer */
-	while (s[i] >= '0' && s[i] <= '9')
+	while (*s >= '0' && *s <= '9')
 	{
-		result = result * 10 + (s[i] - '0');
-		i++;
+		result = result * 10 + (*s - '0');
+		s++;
 	}
 
-	/* Apply sign */
-	result = result * sign;
-
-	return (result);
+	return (sign * result);
 }
