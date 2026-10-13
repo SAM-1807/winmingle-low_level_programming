@@ -1,4 +1,17 @@
-#include <stdio.h>
+#include "main.h"
+
+/**
+ * print_ulong - Prints an unsigned long using _putchar
+ * @n: The unsigned long to print
+ *
+ * Return: Nothing
+ */
+void print_ulong(unsigned long n)
+{
+	if (n / 10)
+		print_ulong(n / 10);
+	_putchar(n % 10 + '0');
+}
 
 /**
  * main - Prints the first 98 Fibonacci numbers
@@ -14,16 +27,21 @@ int main(void)
 
 	a = 1;
 	b = 2;
-	printf("%lu, %lu", a, b);
+	print_ulong(a);
+	_putchar(',');
+	_putchar(' ');
+	print_ulong(b);
 	i = 3;
 	while (i <= 98)
 	{
 		next = a + b;
-		printf(", %lu", next);
+		_putchar(',');
+		_putchar(' ');
+		print_ulong(next);
 		a = b;
 		b = next;
 		i++;
 	}
-	printf("\n");
+	_putchar('\n');
 	return (0);
 }

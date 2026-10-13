@@ -1,4 +1,22 @@
-#include <stdio.h>
+#include "main.h"
+
+/**
+ * print_long - Prints a long integer using _putchar
+ * @n: The long integer to print
+ *
+ * Return: Nothing
+ */
+void print_long(long n)
+{
+	if (n < 0)
+	{
+		_putchar('-');
+		n = -n;
+	}
+	if (n / 10)
+		print_long(n / 10);
+	_putchar(n % 10 + '0');
+}
 
 /**
  * main - Sums even Fibonacci numbers below 4,000,000
@@ -23,6 +41,7 @@ int main(void)
 		a = b;
 		b = next;
 	}
-	printf("%ld\n", sum);
+	print_long(sum);
+	_putchar('\n');
 	return (0);
 }
