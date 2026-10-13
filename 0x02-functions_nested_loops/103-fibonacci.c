@@ -1,27 +1,28 @@
 #include <stdio.h>
 
+/**
+ * main - Sums even Fibonacci numbers below 4,000,000
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
-
 {
-	int previous = 1;
-	int current = 2;
-	int next;
-	int sum = 0;
+	long a;
+	long b;
+	long next;
+	long sum;
 
-
-	while(current <= 4000000)   {
-
-		next = previous + current;
-
-		if(current % 2 == 0)
-
-			sum = current + sum;
-		previous = current;
-		current = next;
-
-	}	
-	printf("%d\n", sum);
-
+	a = 1;
+	b = 2;
+	sum = 0;
+	while (b <= 4000000)
+	{
+		if (b % 2 == 0)
+			sum += b;
+		next = a + b;
+		a = b;
+		b = next;
+	}
+	printf("%ld\n", sum);
 	return (0);
 }
-
