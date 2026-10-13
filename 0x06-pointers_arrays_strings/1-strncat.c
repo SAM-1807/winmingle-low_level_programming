@@ -1,17 +1,36 @@
+/**
+ * 1-strncat - Concatenates n bytes of src to dest
+ * Author: Agbai Samuel Chibuike
+ * Program: WinMingle Community C Training
+ * Description: Appends at most n bytes from src to dest.
+ *
+ * Return: Pointer to dest
+ */
+
 #include "main.h"
 
+/**
+ * _strncat - Concatenates n bytes of src to dest
+ * @dest: Destination string
+ * @src: Source string
+ * @n: Maximum number of bytes to copy
+ *
+ * Return: Pointer to dest
+ */
 char *_strncat(char *dest, char *src, int n)
 {
+	char *start;
+	int i;
 
-	char *ptr = dest;
-	while(*ptr != '\0')
-		ptr++;
-	while(n > 0 && *src != '\0')    {
-		*ptr = *src;
-		ptr++;
-		src++;
-		n--;
+	start = dest;
+	while (*dest != '\0')
+		dest++;
+	i = 0;
+	while (i < n && src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
 	}
-	*ptr = '\0';
-	return dest;
+	dest[i] = '\0';
+	return (start);
 }

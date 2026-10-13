@@ -1,23 +1,34 @@
+/**
+ * 0-strcat - Concatenates two strings
+ * Author: Agbai Samuel Chibuike
+ * Program: WinMingle Community C Training
+ * Description: Appends src to dest, overwriting the null byte.
+ *
+ * Return: Pointer to dest
+ */
+
 #include "main.h"
 
+/**
+ * _strcat - Concatenates two strings
+ * @dest: Destination string
+ * @src: Source string
+ *
+ * Return: Pointer to dest
+ */
 char *_strcat(char *dest, char *src)
 {
-	char *ptr = dest;
+	char *start;
 
-	/* Find the end of dest */
-	while (*ptr != '\0')
-		ptr++;
-
-	/* Copy src to the end of dest */
+	start = dest;
+	while (*dest != '\0')
+		dest++;
 	while (*src != '\0')
 	{
-		*ptr = *src;
-		ptr++;
+		*dest = *src;
+		dest++;
 		src++;
 	}
-
-	/* Add null terminator */
-	*ptr = '\0';
-
-	return (dest);
+	*dest = '\0';
+	return (start);
 }

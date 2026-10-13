@@ -1,21 +1,42 @@
+/**
+ * 101-print_number - Prints an integer using _putchar
+ * Author: Agbai Samuel Chibuike
+ * Program: WinMingle Community C Training
+ * Description: Prints any integer using only _putchar.
+ *
+ * Return: Nothing
+ */
+
 #include "main.h"
+
+/**
+ * print_number - Prints an integer using _putchar
+ * @n: The integer to print
+ *
+ * Return: Nothing
+ */
 void print_number(int n)
 {
-	int divisor = 1;
+	unsigned int abs_n;
+	int divisor;
 
-	if(n < 0)    {
+	divisor = 1;
+	if (n < 0)
+	{
 		_putchar('-');
-		n = -n;
+		abs_n = (unsigned int)(-n);
 	}
-	if(n == 0)    {
-		_putchar('0');
-		return;
+	else
+	{
+		abs_n = (unsigned int)n;
 	}
-	while(divisor * 10 <= n)
+
+	while (abs_n / divisor >= 10)
 		divisor = divisor * 10;
 
-	while(divisor >= 1)    {
-		_putchar((n / divisor) % 10 + '0');
+	while (divisor >= 1)
+	{
+		_putchar((abs_n / divisor) % 10 + '0');
 		divisor = divisor / 10;
 	}
 }

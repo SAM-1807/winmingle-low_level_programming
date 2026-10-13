@@ -1,13 +1,30 @@
-char *string_toupper(char *a)
+/**
+ * 5-string_toupper - Uppercases all letters in a string
+ * Author: Agbai Samuel Chibuike
+ * Program: WinMingle Community C Training
+ * Description: Converts all lowercase letters to uppercase.
+ *
+ * Return: Pointer to the string
+ */
+
+#include "main.h"
+
+/**
+ * string_toupper - Uppercases all letters in a string
+ * @s: The string
+ *
+ * Return: Pointer to the string
+ */
+char *string_toupper(char *s)
 {
-	char *original = a;
+	int i;
 
-	while (*a != '\0')
+	i = 0;
+	while (s[i] != '\0')
 	{
-		if (*a >= 'a' && *a <= 'z')
-			*a = *a - 32;
-		a++;
+		if (s[i] >= 'a' && s[i] <= 'z')
+			s[i] = s[i] - 32;
+		i++;
 	}
-
-	return (original);
+	return (s);
 }

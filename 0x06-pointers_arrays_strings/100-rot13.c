@@ -1,24 +1,41 @@
+/**
+ * 100-rot13 - Encodes a string using rot13
+ * Author: Agbai Samuel Chibuike
+ * Program: WinMingle Community C Training
+ * Description: Encodes a string using the rot13 cipher.
+ *
+ * Return: Pointer to the string
+ */
+
 #include "main.h"
 
-char *rot13(char *a)
+/**
+ * rot13 - Encodes a string using rot13
+ * @s: The string
+ *
+ * Return: Pointer to the string
+ */
+char *rot13(char *s)
 {
-	char *original = a;
+	int i;
+	int j;
+	char in[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char out[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
-	while(*original != '\0')    {
-		if(*original >= 'a' && *original <= 'z')    {
-			if(*original >= 'a' && *original <= 'm')    	
-				*original = *original + 13;
-			else    
-				*original = *original - 13;
+	i = 0;
+	while (s[i] != '\0')
+	{
+		j = 0;
+		while (in[j] != '\0')
+		{
+			if (s[i] == in[j])
+			{
+				s[i] = out[j];
+				break;
+			}
+			j++;
 		}
-		if(*original >= 'A' && *original <= 'Z')    {
-			if(*original >= 'A' && *original <= 'M')
-				*original = *original + 13;
-			else   
-				*original = *original - 13;
-		}
-		original++;
+		i++;
 	}
-	return(a);
+	return (s);
 }
-
