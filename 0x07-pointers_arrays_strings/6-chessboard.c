@@ -1,18 +1,35 @@
+/**
+ * 6-chessboard - Prints a chessboard
+ * Author: Agbai Samuel Chibuike
+ * Program: WinMingle Community C Training
+ * Description: Prints an 8x8 chessboard from a char array.
+ *
+ * Return: Nothing
+ */
+
 #include "main.h"
 
 /**
- * print_chessboard - prints an 8x8 chessboard from a 2D array.
- * @a: pointer to an array of 8 characters.
+ * print_chessboard - Prints an 8x8 chessboard
+ * @a: The board array
+ *
+ * Return: Nothing
  */
 void print_chessboard(char (*a)[8])
 {
-	int i;
-	int j;
+	int row;
+	int col;
 
-	for (i = 0; i < 8; i++)
+	row = 0;
+	while (row < 8)
 	{
-		for (j = 0; j < 8; j++)
-			_putchar(a[i][j]);
+		col = 0;
+		while (col < 8)
+		{
+			_putchar(a[row][col]);
+			col++;
+		}
 		_putchar('\n');
+		row++;
 	}
 }

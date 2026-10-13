@@ -1,25 +1,35 @@
+/**
+ * 4-strpbrk - Searches for any character in a set
+ * Author: Agbai Samuel Chibuike
+ * Program: WinMingle Community C Training
+ * Description: Returns a pointer to the first byte in s that matches accept.
+ *
+ * Return: Pointer to first match, or NULL
+ */
+
 #include "main.h"
 
 /**
- * _strpbrk - finds the first occurrence in s of any byte from accept.
- * @s: the string to search.
- * @accept: the set of bytes to look for.
+ * _strpbrk - Searches a string for any of a set of bytes
+ * @s: The string
+ * @accept: The set of characters to search for
  *
- * Return: a pointer to the first matching byte, or NULL if none found.
+ * Return: Pointer to first match, or NULL
  */
 char *_strpbrk(char *s, char *accept)
 {
 	int i;
 
-	while (*s)
+	while (*s != '\0')
 	{
-		for (i = 0; accept[i] != '\0'; i++)
+		i = 0;
+		while (accept[i] != '\0')
 		{
 			if (*s == accept[i])
 				return (s);
+			i++;
 		}
 		s++;
 	}
-
-	return (NULL);
+	return (0);
 }
